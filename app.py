@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return jsonify({"message": "Hello World from Flask-v1.0"})
+    return jsonify({"message": "Hello World from Flask-v2.0"})
