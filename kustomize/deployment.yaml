@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskapp-deploy
+  namespace: flaskapp-ns
+  labels:
+    app: flaskapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flaskapp
+  template:
+    metadata:
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+      - name: flaskapp
+        image: nabinchhetri/flask-app:v1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
